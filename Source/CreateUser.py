@@ -17,9 +17,13 @@ def createPlayer():
 	print(r)
 
 def listPlayers():
+	print('Getting player list!')
 	url = root + players
 	r = requests.get(url)
 	pprint(r.json())
 	
-createPlayer()
+
+userInput = input('Do you want to create a user? Y/N')
+if userInput.lower() == 'y':
+	createPlayer()
 listPlayers()
